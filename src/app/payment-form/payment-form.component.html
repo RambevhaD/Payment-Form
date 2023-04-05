@@ -1,0 +1,86 @@
+<div class="container ">
+    <h3 class="text-center">Payment Form</h3>
+  
+    <div class="row">
+  
+      <div class="form-group col">
+        <label> Payee Name</label>
+        <input
+          class="form-control"
+          #NameInput
+          (input)="onInputName(NameInput.value)"
+          type="text"
+        />
+      </div>
+  
+      <div class="col">
+        <label><b>Name</b></label>
+        <div>
+          {{ name | titlecase }}
+        </div>
+      </div>
+    </div>
+  
+    <div class="row">
+  
+      <div class="form-group col">
+        <label> Date</label>
+        <input
+          class="form-control"
+          #DateInput
+          (input)="onDateChange(DateInput.value)"
+          type="date"
+        />
+      </div>
+  
+      <div class="col">
+        <label><b>Date</b></label>
+        <div>
+          {{ date | date }}
+        </div>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="form-group col">
+        <label><b>Payment Amount</b></label>
+        <input
+          class="form-control"
+          #AmountInput
+          (input)="onAmountChange(AmountInput.value)"
+          type="number"
+        />
+      </div>
+  
+      <div class="col">
+        <label><b>Amount</b></label>
+        <div>
+          {{ amount | currency: 'GBP'}}
+        </div>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="form-group col">
+        <label><b>Miles</b></label>
+        <input
+          class="form-control"
+          #MileInput
+          (input)="onMilesChange(MileInput.value)"
+          type="number"
+        />
+      </div>
+  
+      <div class="col">
+        <label><b>KM</b></label>
+  
+        <!-- <div *ngIf="(miles| convert: 'km') > 10"> -->
+          <div>
+          {{ miles | convert: 'KM' }}
+  
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
